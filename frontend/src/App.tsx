@@ -13,15 +13,15 @@ import SideDrawer from './components/SideDrawer';
 import './App.css';
 
 
+export const GET_PRODUCT_REQUEST = "GET_PRODUCT_REQUEST";
+export const GET_PRODUCT_SUCCESS = "GET_PRODUCT_SUCCESS";
+export const GET_PRODUCT_FAIL = "GET_PRODUCT_FAIL";
 
 
 const App: FC = () => {
 
 const [sideToggle, setSideToggle] = useState(false)
 
-export const GET_PRODUCT_REQUEST = "GET_PRODUCT_REQUEST";
-export const GET_PRODUCT_SUCCESS = "GET_PRODUCT_SUCCESS";
-export const GET_PRODUCT_FAIL = "GET_PRODUCT_FAIL";
   return (
     <Router>
       <Navbar click={() => setSideToggle(true)} />
