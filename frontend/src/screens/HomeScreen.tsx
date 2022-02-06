@@ -11,6 +11,11 @@ const HomeScreen: FC = () => {
 
       <div className='homescreen__products'>
         <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
       </div>
     </div>
   )

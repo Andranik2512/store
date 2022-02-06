@@ -12,6 +12,9 @@ import SideDrawer from './components/SideDrawer';
 
 import './App.css';
 
+
+
+
 const App: FC = () => {
 
 const [sideToggle, setSideToggle] = useState(false)
@@ -24,9 +27,9 @@ const [sideToggle, setSideToggle] = useState(false)
       <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
       <main>
         <Routes>
-          <Route path="/" element={HomeScreen} />
-          <Route path="/product/:id" element={ProductScreen} />
-          <Route path="/cart" element={CartScreen} />
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/product/:id" element={<ProductScreen />} />
+          <Route path="/cart" element={<CartScreen />} />
         </Routes>
       </main>
     </Router>

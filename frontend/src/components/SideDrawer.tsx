@@ -8,8 +8,9 @@ export type TSideDrawerPropos = {
 }
 
 
+
 const SideDrawer: FC<TSideDrawerPropos> = ({ show, click }) => {
-  const sideDrawerClass = ["sidedrawer"]
+  const sideDrawerClass = ["sidedrawer"];
 
   if (show) {
     sideDrawerClass.push("show");
@@ -21,7 +22,8 @@ const SideDrawer: FC<TSideDrawerPropos> = ({ show, click }) => {
           <Link to='/cart'>
             <i className='fas fa-shopping-cart'></i>
             <span>
-              Cart <span className='sidebrawer__cartbadge'>0</span>
+              Cart {""}
+              <span className='sidebrawer__cartbadge'>0</span>
             </span>
           </Link>
         </li>
@@ -30,7 +32,9 @@ const SideDrawer: FC<TSideDrawerPropos> = ({ show, click }) => {
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
 export default SideDrawer;
+
+
