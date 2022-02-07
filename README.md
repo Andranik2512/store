@@ -1,6 +1,8 @@
+
+
+```
 git clone https://github.com/Andranik2512/store.git
-
-
+```
 
 
 
