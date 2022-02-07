@@ -2,20 +2,10 @@ import React, { FC } from 'react';
 import { useEffect } from 'react';
 import {useSelector, useDispatch  } from 'react-redux';
 
-
 import Product from '../components/Product';
 
 import {getProducts as listProducts} from '../redux/actions/productActions'
 import './HomeScreen.css'
-
-// interface HomeScreenProps {
-//       key: number;
-//       name: string;
-//       description: string;
-//       price: string;
-//       imageUrl: string;
-//       productId: number;
-// }
 
 const HomeScreen: FC= () => {
 
@@ -40,8 +30,12 @@ const HomeScreen: FC= () => {
           console.log(products),
           products.map((product:any) => (
             <Product
-              key={product._id}
-        
+            key={product._id}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            imageUrl={product.imageUrl}
+            productId={product._id}
             />
           ))
         )}
@@ -50,4 +44,4 @@ const HomeScreen: FC= () => {
   );
 };
 
-export default HomeScreen;;
+export default HomeScreen;
