@@ -3,7 +3,9 @@ import './ProductScreen.css'
 import { getProductDetails } from '../redux/actions/productActions';
 import { addToCart } from '../redux/actions/cartActions';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 const ProductScreen: FC = () => {
@@ -26,7 +28,6 @@ const ProductScreen: FC = () => {
 
   const addToCartHandler = () => {
     dispatch(addToCart(product._id));
-    // history.push(`/cart`);
   };
   return (
     <div className="productscreen">
@@ -58,7 +59,9 @@ const ProductScreen: FC = () => {
               </p>
               <p>
                 <button type="button" onClick={addToCartHandler}>
-                  Add To Cart
+                <Link to={"/cart"} className="info__button">
+                    Add to cart
+                </Link>
                 </button>
               </p>
             </div>

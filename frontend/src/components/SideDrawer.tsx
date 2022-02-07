@@ -22,7 +22,7 @@ const SideDrawer: FC<TSideDrawerPropos> = ({ show, click }) => {
           <Link to='/cart'>
             <i className='fas fa-shopping-cart'></i>
             <span>
-              Cart {""}
+              Cart {"0"}
               <span className='sidebrawer__cartbadge'>0</span>
             </span>
           </Link>
