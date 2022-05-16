@@ -1,10 +1,12 @@
-import "./CartItem.css";
 import React, { FC } from 'react';
-
 import { Link } from "react-router-dom";
 
+import "./CartItem.css";
+
 interface Productprops{
-  item:any, removeHandler:any, key:any
+  item:any, 
+  removeHandler:any, 
+  key:any
 }
 
 const CartItem: FC<Productprops> = ({item, removeHandler, key}) => {
@@ -17,17 +19,6 @@ const CartItem: FC<Productprops> = ({item, removeHandler, key}) => {
         <p>{item.name}</p>
       </Link>
       <p className="cartitem__price">${item.price}</p>
-      {/* <select
-        value={item.qty}
-        onChange={(e) => qtyChangeHandler(item.product, e.target.value)}
-        className="cartItem__select"
-      >
-        {[...Array(item.countInStock).keys()].map((x) => (
-          <option key={x + 1} value={x + 1}>
-            {x + 1}
-          </option>
-        ))}
-      </select> */}
       <button
         className="cartItem__deleteBtn"
         onClick={() => removeHandler(item.product)}

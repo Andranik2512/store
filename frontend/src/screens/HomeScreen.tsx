@@ -1,13 +1,16 @@
-import React, { FC } from 'react';
-import { useEffect } from 'react';
+import React, { FC,useState,useEffect } from 'react';
 import {useSelector, useDispatch  } from 'react-redux';
 
 import Product from '../components/Product';
+import {BsList} from "react-icons/bs";
+
+
 
 import {getProducts as listProducts} from '../redux/actions/productActions'
 import './HomeScreen.css'
 
 const HomeScreen: FC= () => {
+  const [list, setList] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -19,9 +22,11 @@ const HomeScreen: FC= () => {
   }, [dispatch]);
 
   return (
-    <div className="homescreen">
-      <h2 className="homescreen__title">Latest Products</h2>
-      <div className="homescreen__products">
+    <div className="homescreen__products">
+      <div>
+        <BsList onClick={() => setList(!list)} className='bslist'/>
+        </div>
+      <div className={list ? "grid" : "list"}>
         {loading ? (
           <h2>Loading...</h2>
         ) : error ? (

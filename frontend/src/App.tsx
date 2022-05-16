@@ -7,8 +7,7 @@ import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
 
 import Navbar from './components/Navbar';
-import Backdrop from './components/Backdrop';
-import SideDrawer from './components/SideDrawer';
+// import SideDrawer from './components/SideDrawer';
 
 import './App.css';
 
@@ -19,14 +18,9 @@ export const GET_PRODUCT_FAIL = "GET_PRODUCT_FAIL";
 
 
 const App: FC = () => {
-
-const [sideToggle, setSideToggle] = useState(false)
-
   return (
     <Router>
-      <Navbar click={() => setSideToggle(true)} />
-      <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<HomeScreen />} />

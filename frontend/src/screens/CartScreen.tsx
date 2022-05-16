@@ -22,11 +22,11 @@ const CartScreen: FC = () => {
 
   useEffect(() => {}, []);
 
-  const qtyChangeHandler = (id:any) => {
+  const qtyChangeHandler = (id:number) => {
     dispatch(addToCart(id));
   };
 
-  const removeFromCartHandler = (id:any) => {
+  const removeFromCartHandler = (id:number) => {
     dispatch(removeFromCart(id));
   };
 
@@ -36,7 +36,7 @@ const CartScreen: FC = () => {
 
   const getCartSubTotal = () => {
     return cartItems
-      .reduce((price:any, item:any) => price + item.price, 0)
+      .reduce((price:number, item:any) => price + item.price, 0)
       .toFixed(2);
   };
 

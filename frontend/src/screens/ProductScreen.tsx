@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import './ProductScreen.css'
 import { getProductDetails } from '../redux/actions/productActions';
 import { addToCart } from '../redux/actions/cartActions';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+//стили
+import './ProductScreen.css'
 
 
 const ProductScreen: FC = () => {
@@ -13,7 +13,6 @@ const ProductScreen: FC = () => {
   const pathname = window.location.href;
   const arr = pathname.split("/");
   const prodId = arr[arr.length-1];
-  console.log(prodId);
 
   const productDetails = useSelector((state:any) => state.getProductDetails);
   const { loading, error, product } = productDetails;

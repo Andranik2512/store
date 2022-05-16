@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import './Navbar.css';
 
 export type TNavbarPropos = {
-  click: any
+  click?: any
 }
 
 const Navbar: FC<TNavbarPropos> = ({click}) => {
@@ -13,7 +13,7 @@ const Navbar: FC<TNavbarPropos> = ({click}) => {
       <div className='navbar__logo'>
       <Link to="/" >           
             <h2 >
-            Zappos
+        APPLE SHOP
             </h2>
           </Link>
         {/* <h2 >Zappos</h2> */}

@@ -1,30 +1,43 @@
 import React, { FC } from 'react';
+import {  useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
+import { addToCart } from '../redux/actions/cartActions';
+//стили
 import './Product.css'
 
-interface Productprops{
-  imageUrl:any, description:any, price:any, name:any, productId:any;
+interface Productprops {
+  imageUrl: string,
+  description: string,
+  price: number,
+  name: string,
+  productId: number;
 }
 
+const Product: FC<Productprops> = ({ imageUrl, description, price, name, productId }) => {
+  
+  const dispatch = useDispatch();
 
-const Product: FC<Productprops> = ({imageUrl, description, price, name, productId}) => {
+  const handleClick = () => {
+    dispatch(addToCart(productId));
+   
+   
+  }
+  
   return (
-    <div className="product">
-    <img src={imageUrl} alt={name}/>
-
-    <div className="product__info">
-      <p className="info__name">{name}</p>
-
-      <p className="info__description">{description.substring(0, 100)}...</p>
-
-      <p className="info__price">${price}</p>
-
-      <Link to={`/product/${productId}`} className="info__button">
-        View
-      </Link>
-    </div>
-  </div>
+    <Link to={`/product/${productId}`}>
+      <div className="product">
+        <img src={imageUrl} alt={name} />
+        <div className="product__info">
+          <p className="info__name">{name}</p>
+          <p className="info__description">{description.substring(0, 100)}...</p>
+          <p className="info__price">${price}</p>
+          <Link  to={"/cart"} onClick={handleClick} className="info__button">
+            Add to cart
+          </Link>
+        </div>
+      </div>
+    </Link>
   )
 };
-
 export default Product;
